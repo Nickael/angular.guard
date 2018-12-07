@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="conversation">
+      <app-message *ngFor='let message of conversation' [message]="message"></app-message>
+  </div>
+
+  <div class="input" type="submit" *ngIf="logged == true">
+    <textarea type="textarea" class="form-control" id="name" row=2
+    required
+    [(ngModel)]="_text" name="name"  rows="4" cols="50"></textarea><br/>
+
+    <button (click)="sendMessage(_text)">Send Message</button>
+  </div>
+</div>

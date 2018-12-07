@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+  width: 100wv;
+  background: rgb(240, 240, 240);
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+}
+
+.input {
+  height: 25vh;
+  width: 100%;
+  background: rgb(214, 214, 214);
+}
+
+.conversation {
+  height: 75vh;
+  width: 100%;
+  overflow: auto;
+}

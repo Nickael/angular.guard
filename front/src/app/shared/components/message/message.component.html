@@ -1,0 +1,10 @@
+<div class="message" [class.toto]="message?.author == uuid">
+  <div [innerHTML]="message?.content"></div>
+</div>
+<div class="author" [class.toto]="message?.author == uuid">
+  <span *ngIf="message?.author == uuid; else auth"><span>me</span>
+  </span>
+  <ng-template #auth>
+    <span>{{message?.author}}</span>
+  </ng-template>
+</div>

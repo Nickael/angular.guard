@@ -1,0 +1,23 @@
+.message {
+  min-height: 5vh;
+  line-height: 5vh;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding: 0 2.5vh;
+}
+
+.toto.message {
+  text-align: right;
+  background: rgb(255, 226, 226);
+  color: rgb(214, 117, 117);
+}
+
+.author {
+  color: rgb(151, 151, 151);
+  padding: 0 2.5vh;
+  min-height: 5vh;
+  line-height: 5vh;
+}
+
+.toto.author {
+  text-align: right;
+}

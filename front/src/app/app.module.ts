@@ -6,14 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessageComponent } from './shared/components/message/message.component';
 import { ConversationComponent } from './shared/components/conversation/conversation.component';
-import { ButtonComponent } from './shared/component/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponent,
     ConversationComponent,
-    ButtonComponent
   ],
   imports: [
     BrowserModule,

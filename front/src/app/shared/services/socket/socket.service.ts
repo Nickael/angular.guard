@@ -33,4 +33,8 @@ export class SocketService {
 
     return Subject.create(_observer, _observable);
   }
+
+  disconnect(): void {
+    this.socket.emit('disconnect');
+  }
 }

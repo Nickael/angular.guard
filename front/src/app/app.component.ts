@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from './shared/services/session/storage/storage.service';
+import { ChatService } from './shared/services/chat/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,10 @@ export class AppComponent implements OnInit {
   title = 'guard';
   logged;
 
-  constructor(private storageService: StorageService) {}
+  constructor(
+    private storageService: StorageService,
+    private chatService: ChatService,
+    ) {}
 
   ngOnInit() {
     if (this.storageService.getUUID() == null) {
@@ -25,6 +29,7 @@ export class AppComponent implements OnInit {
     if ( this.storageService.getUUID() != null) {
       this.storageService.removeUUID();
       this.logged = false;
+      this.chatService.disconnect();
     }
   }
 
@@ -33,6 +38,8 @@ export class AppComponent implements OnInit {
     if ( this.storageService.getUUID() == null) {
       this.storageService.generateUUID();
       this.logged = true;
+      this.chatService.connect();
+      this.chatService.sendMessage(this.storageService.getUUID());
     }
   }
 }

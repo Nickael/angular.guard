@@ -25,6 +25,12 @@ export class ChatService {
     }
   }
 
+  disconnect(): void {
+    if (this.storageService.getUUID() == null) {
+      this.socketService.disconnect();
+    }
+  }
+
   sendMessage(message: any) {
     if (this.storageService.getUUID() != null) {
       this.message.next(message);

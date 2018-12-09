@@ -32,13 +32,16 @@ export class ConversationComponent implements OnInit {
   }
 
   sendMessage(_message: string) {
-    const message: Message =  {
-      author: this.storageService.getUUID(),
-      content: _message,
-      type: 'new-message'
-    };
+    console.log(_message);
+    if (_message !== undefined && _message.length > 0) {
+      const message: Message =  {
+        author: this.storageService.getUUID(),
+        content: _message,
+        type: 'new-message'
+      };
 
-    this.chatService.sendMessage(message);
+      this.chatService.sendMessage(message);
+    }
   }
 
 }
